@@ -1,7 +1,9 @@
-import { map } from 'ramda';
+'use strict';
 
-const arr = [1, 2, 3, 4, 5];
+import React from 'react';
+import InputGrid from './components/input-grid.js';
 
-const timesTwo = map(x => x * 2);
-
-console.log(timesTwo(arr));
+React.render(
+    <InputGrid />,
+    document.body
+);
