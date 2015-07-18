@@ -10,6 +10,7 @@ const Sel = React.createClass({
   render() {
     const styles = {
       backgroundColor: this.props.colorVal,
+      opacity: this.props.colorVal === 'white' ? 0 : 1,
       width: '33%',
       boxSizing: 'border-box',
       height: '33%',

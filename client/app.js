@@ -4,6 +4,9 @@ import React from 'react';
 import InputGrid from './components/input-grid.js';
 
 React.render(
-    <InputGrid />,
+    <div>
+      <InputGrid />
+      <InputGrid />
+    </div>,
     document.body
 );

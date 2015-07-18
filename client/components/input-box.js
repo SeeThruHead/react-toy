@@ -33,7 +33,9 @@ const InputBox = React.createClass({
         width: '33%',
         height: '33%',
         float: 'left',
-        boxSizing: 'border-box'
+        boxSizing: 'border-box',
+        borderRadius: '50%'
+
       }
     };
 

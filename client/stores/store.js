@@ -1,21 +1,20 @@
 'use strict';
 
 import Reflux from 'reflux';
-import {times, reject, equals, length, lensIndex, set} from 'ramda';
+import {repeat, reject, equals, length, lensIndex, set, compose} from 'ramda';
 import actions from '../actions/actions';
 
 let grid = {
-  values: times(() => 'white', 9)
+  values: repeat('white', 9)
 };
 
 let store = Reflux.createStore({
   listenables: [actions],
 
   onChangeColor(id, color) {
-    const newValues = set(lensIndex(id), color, grid.values);
-    console.log(newValues);
+    const newValues = set(lensIndex(id), color)(grid.values);
     const isColor = reject(equals('white'));
-    const numColors = length(isColor(newValues));
+    const numColors = compose(length, isColor)(newValues);
 
     if (numColors > 5) {
       alert('Too many ships');
