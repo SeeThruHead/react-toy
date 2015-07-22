@@ -2,7 +2,6 @@
 import React from 'react';
 import Radium from 'radium';
 import gsap from 'gsap';
-//import blueship from '../assets/images/blueship.png';
 
 
 const Ship = React.createClass({
@@ -31,7 +30,7 @@ const Ship = React.createClass({
     const shipStyles = {
       width: '140px',
       position: 'absolute',
-      top: '50%',
+      top: 'calc(50% - 20px)',
       left: '50%',
       transform: 'translate(-50%, -50%)'
     };

@@ -17,6 +17,7 @@ const Sel = React.createClass({
       height: '33%',
       float: 'left',
       borderRadius: 50,
+      fontSize: 30,
       transition: '.2s ease-in-out',
       ':hover': {
         transform: 'scale(1.2)'
@@ -24,9 +25,7 @@ const Sel = React.createClass({
     };
 
     return (
-      <div onClick={this.update}
-        style={styles}>
-      </div>
+      <div onClick={this.update} style={styles}></div>
     );
   }
 });
