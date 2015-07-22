@@ -19,8 +19,17 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel?optional[]=runtime&stage=0'
-      }
+        loaders: [
+          'react-hot',
+          'babel?optional[]=runtime&stage=0'
+        ]
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'file?name=[path][name].[ext]'
+      },
+      { test: /\.css$/, loader: "style-loader!css-loader" }
     ]
   }
 };

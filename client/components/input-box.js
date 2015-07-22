@@ -19,32 +19,30 @@ const InputBox = React.createClass({
         'white']
     }
   },
-  update(color) {
-    this.props.update(this.props.pos, color);
-  },
   togglePicker() {
     this.setState({ pickerOpen: !this.state.pickerOpen });
+  },
+  buttonColor() {
+    if (this.state.pickerOpen || this.props.color === 'white') return 'white';
+    return 'radial-gradient(circle at 35% 35%,' + this.props.color + ', #000)';
   },
   render() {
     const styles = {
       box: {
-        backgroundColor: this.state.pickerOpen ? 'white' : this.props.color,
+        background: this.buttonColor(),
         border: '1px solid gray',
         width: '33%',
         height: '33%',
         float: 'left',
         boxSizing: 'border-box',
         borderRadius: '50%'
-
       }
     };
 
     return (
       <div onClick={this.togglePicker}
         style={styles.box}>
-        {this.state.pickerOpen ? this.state.colorList.map((x, i) => (
-          <Sel colorVal={x} key={i} cb={this.update}/>
-        )) : null}
+        {this.state.pickerOpen && this.state.colorList.map((x, i) => <Sel colorVal={x} key={i} pos={this.props.pos} />)}
       </div>
     );
   }
