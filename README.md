@@ -6,3 +6,5 @@ Tinkering with these for the first time
 - Reflux
 - Webpack
 - GSAP 
+
+run `npm install && npm run watch` to launch
