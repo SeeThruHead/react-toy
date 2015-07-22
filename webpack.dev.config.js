@@ -28,8 +28,7 @@ module.exports = {
         test: /\.(jpe?g|png|gif|svg)$/i,
         exclude: /(node_modules|bower_components)/,
         loader: 'file?name=[path][name].[ext]'
-      },
-      { test: /\.css$/, loader: "style-loader!css-loader" }
+      }
     ]
   }
 };
